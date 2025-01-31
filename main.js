@@ -442,7 +442,9 @@ while (i > 0){
     window.confirm(numbers);
     window.confirm("le mot choisit est donc: " + numbers[result-1]);
     s_add, m_d= tour(actif,5,numbers[result-1]);
-    score += s_add;
+    if(s_add==1) {
+        score += s_add;
+    }
     window.confirm("votre score: " + score);
     historiqueContenu += "Tour " + ntour +" : Mot à deviner : " + numbers + "Mot donné : "+ m_d +"\n";
     i -= 1;
