@@ -416,34 +416,34 @@ function sauvegarderHistorique(historiqueContenu) {
 }
 
 while (i > 0){
-    actif = Math.floor(Math.random()*5)+1
-    window.confirm("joueur " + actif + ", tu seras joueur actif cette manche.")
-    bon = false
+    actif = Math.floor(Math.random()*5)+1;
+    window.confirm("joueur " + actif + ", tu seras joueur actif cette manche.");
+    bon = false;
     while (!bon){
-        result = window.prompt("Joueur actif (" + actif + "), choisis un nombre entre 1 et 5: ")
+        result = window.prompt("Joueur actif (" + actif + "), choisis un nombre entre 1 et 5: ");
         if (result >0 && result<6){
-            bon = true
+            bon = true;
         }else{
-            window.confirm("nan vraiment un *nombre* entre 1 et 5")
+            window.confirm("nan vraiment un *nombre* entre 1 et 5");
         }
     }
-    numbers=[]
-    j = 5
+    numbers=[];
+    j = 5;
     while (j>0){
-        temp = listemots[Math.floor(Math.random()*400)]
+        temp = listemots[Math.floor(Math.random()*400)];
         if (!(temp in numbers)){
-            numbers.push(temp)
+            numbers.push(temp);
         }
-        j-=1
+        j-=1;
     }
 
     
-    window.confirm("joueur actif (" + actif + "), cache toi les yeux, voiçi les mots qui étaient disponibles: ")
-    window.confirm(numbers)
-    window.confirm("le mot choisit est donc: " + numbers[result-1])
-    s_add, m_d= tour(actif,5,numbers[result-1])
-    score += s_add
-    window.confirm("votre score: " + score)
+    window.confirm("joueur actif (" + actif + "), cache toi les yeux, voiçi les mots qui étaient disponibles: ");
+    window.confirm(numbers);
+    window.confirm("le mot choisit est donc: " + numbers[result-1]);
+    s_add, m_d= tour(actif,5,numbers[result-1]);
+    score += s_add;
+    window.confirm("votre score: " + score);
     historiqueContenu += "Tour " + ntour +" : Mot à deviner : " + numbers + "Mot donné : "+ m_d +"\n";
     i -= 1;
     ntour += 1;
