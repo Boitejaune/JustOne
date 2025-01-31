@@ -11,7 +11,7 @@ function tour(j_cache, nb_j,m_mys) {
     }
     verif(mots);
     var prop = prompt("Devine le mot mystère avec ceux-ci :" + mots);
-    if(prop == m_mys) {
+    if(prop.toUpperCase() == m_mys.toUpperCase()) {
         return(1);
     }
     else if(prop == "passe"){

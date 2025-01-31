@@ -399,6 +399,7 @@ const listemots = ["Afrique",
     "Étude",
     "Œil",
     "Œuf"]
+var score = 0
 while (i > 0){
     actif = Math.floor(Math.random()*5)+1
     window.confirm("joueur " + actif + ", tu seras joueur actif cette manche.")
@@ -415,6 +416,6 @@ while (i > 0){
     window.confirm("joueur actif (" + actif + "), cache toi les yeux, voiçi les mots qui étaient disponibles: ")
     window.confirm(numbers)
     window.confirm("le mot choisit est donc: " + numbers[result-1])
-    tour()
-    
+    score += tour(actif,5,numbers[result-1])
+    window.confirm("votre score: " + score)
 }
