@@ -12,13 +12,13 @@ function tour(j_cache, nb_j,m_mys) {
     verif(mots);
     var prop = prompt("Devine le mot mystère avec ceux-ci :" + mots);
     if(prop.toUpperCase() == m_mys.toUpperCase()) {
-        return(1);
+        return(1,prop);
     }
     else if(prop == "passe"){
-        return(-1);
+        return(-1,prop);
     }
     else{
-        return(0);
+        return(0,prop);
     }
 }
  

@@ -1,4 +1,3 @@
-var i = 13
 const listemots = ["Afrique",
     "Aiguille",
     "Aile",
@@ -399,7 +398,23 @@ const listemots = ["Afrique",
     "Étude",
     "Œil",
     "Œuf"]
+var i = 13
 var score = 0
+var ntour = 1
+var s_add = 0
+var m_d = ""
+let historiqueContenu = "";
+
+function sauvegarderHistorique(historiqueContenu) {
+    const blob = new Blob([historiqueContenu], { type: 'text/plain' });
+    const lien = document.createElement('a');
+    lien.href = URL.createObjectURL(blob);
+    lien.download = 'Historique.txt';
+    document.body.appendChild(lien);
+    lien.click();
+    document.body.removeChild(lien);
+}
+
 while (i > 0){
     actif = Math.floor(Math.random()*5)+1
     window.confirm("joueur " + actif + ", tu seras joueur actif cette manche.")
@@ -416,6 +431,12 @@ while (i > 0){
     window.confirm("joueur actif (" + actif + "), cache toi les yeux, voiçi les mots qui étaient disponibles: ")
     window.confirm(numbers)
     window.confirm("le mot choisit est donc: " + numbers[result-1])
-    score += tour(actif,5,numbers[result-1])
+    s_add, m_d= tour(actif,5,numbers[result-1])
     window.confirm("votre score: " + score)
+    historiqueContenu += "Tour " + ntour +" : Mot à deviner : " + numbers + "Mot donné : "+ m_d +"\n";
+    i -= 1;
+    ntour += 1;
 }
+window.addEventListener('load', function() {
+    sauvegarderHistorique(historiqueContenu);
+});
