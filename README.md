@@ -9,3 +9,9 @@ Règle / Suivit du jeux :
     On révèle les mots aux autre joueurs qui doivent et enlevés les mots identiques, puis on révèle les mots au joueur qui doit deviner le mot mystère avec les mots restants.
 
     S'il le trouve carte face visible à côté de la pioche, sinon ranger cette carte et la première dans la pioche dans la boîte. S'il passe son tour juste remettre la carte actuelle dans la pioche de la boîte.
+
+Listes :
+
+- Pioche du jeux : Celle-ci comprends ??? cartes sur la quelle il y a 5 mots différents
+- Pile de carte : 13 cartes prise de la pioches
+
