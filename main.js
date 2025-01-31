@@ -58,7 +58,7 @@ const listemots = ["Afrique",
     "Bâton",
     "Bête",
     "Bûche",
-    "Bɶuf",
+    "Boeuf",
     "Cabinet",
     "Cadre",
     "Cafard",
@@ -124,7 +124,7 @@ const listemots = ["Afrique",
     "Crochet",
     "Cuisine",
     "Cycle",
-    "Cɶur",
+    "Coeur",
     "Danse",
     "Dinosaure",
     "Docteur",
@@ -250,7 +250,7 @@ const listemots = ["Afrique",
     "Noël",
     "Nuit",
     "Numéro",
-    "Nɶud",
+    "Noeud",
     "Oiseau",
     "Opéra",
     "Opération",
@@ -396,9 +396,9 @@ const listemots = ["Afrique",
     "Éponge",
     "Étoile",
     "Étude",
-    "Œil",
-    "Œuf"]
-var i = 13
+    "Oeil",
+    "Oeuf"]
+var i = 2
 var score = 0
 var ntour = 1
 var s_add = 0
@@ -430,9 +430,10 @@ while (i > 0){
     numbers=[];
     j = 5;
     while (j>0){
-        temp = listemots[Math.floor(Math.random()*400)];
+        temp = Math.floor(Math.random()*400);
         if (!(temp in numbers)){
-            numbers.push(temp);
+            numbers.push(listemots[temp]);
+            listemots.pop(temp)
         }
         j-=1;
     }
@@ -441,12 +442,13 @@ while (i > 0){
     window.confirm("joueur actif (" + actif + "), cache toi les yeux, voiçi les mots qui étaient disponibles: ");
     window.confirm(numbers);
     window.confirm("le mot choisit est donc: " + numbers[result-1]);
-    s_add, m_d= tour(actif,5,numbers[result-1]);
-    if(s_add==1) {
+    [s_add, m_d] = tour(actif,5,numbers[result-1]);
+    if (s_add == 1){
         score += s_add;
     }
+    console.log(score)
     window.confirm("votre score: " + score);
-    historiqueContenu += "Tour " + ntour +" : Mot à deviner : " + numbers + "Mot donné : "+ m_d +"\n";
+    historiqueContenu += "Tour " + ntour +" : Mot à deviner : " + numbers[result-1] + "Mot donné : "+ m_d +"\n";
     i -= 1;
     ntour += 1;
 }
