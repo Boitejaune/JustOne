@@ -398,7 +398,7 @@ const listemots = ["Afrique",
     "Étude",
     "Oeil",
     "Oeuf"]
-var i = 2
+var i = 13 // Nombre de round
 var score = 0
 var ntour = 1
 var s_add = 0
@@ -418,7 +418,7 @@ function sauvegarderHistorique(historiqueContenu) {
 while (i > 0){
     actif = Math.floor(Math.random()*5)+1;
     window.confirm("joueur " + actif + ", tu seras joueur actif cette manche.");
-    bon = false;
+    bon = false; // Vérification que le joueur entre bien le bon nombre
     while (!bon){
         result = window.prompt("Joueur actif (" + actif + "), choisis un nombre entre 1 et 5: ");
         if (result >0 && result<6){
@@ -428,7 +428,7 @@ while (i > 0){
         }
     }
     numbers=[];
-    j = 5;
+    j = 5; // nombre de joueur
     while (j>0){
         temp = Math.floor(Math.random()*400);
         if (!(temp in numbers)){
@@ -448,7 +448,7 @@ while (i > 0){
     }
     console.log(score)
     window.confirm("votre score: " + score);
-    historiqueContenu += "Tour " + ntour +" : Mot à deviner : " + numbers[result-1] + "Mot donné : "+ m_d +"\n";
+    historiqueContenu += "Tour " + ntour +" : Mot à deviner : " + numbers[result-1] + "Mot donné : "+ m_d + "par joueur " + actif + "\n";
     i -= 1;
     ntour += 1;
 }
