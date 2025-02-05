@@ -428,7 +428,7 @@ while (i > 0){
         }
     }
     numbers=[];
-    j = 5; // nombre de joueur
+    j = 5; // nombre de mots
     while (j>0){
         temp = Math.floor(Math.random()*400);
         if (!(temp in numbers)){
