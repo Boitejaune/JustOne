@@ -1,5 +1,5 @@
 
-function tour(j_cache, nb_j,m_mys) {
+function tour(j_cache, nb_j,m_mys) { // j_cache : joueur qui ne doit pas regarder l'écran, nb_j : nombre de joueurs, m_mys : mot mystère
     var mots = []
     for(let i = 1;i<=nb_j;i++){
         if (i == j_cache){
@@ -10,7 +10,7 @@ function tour(j_cache, nb_j,m_mys) {
         }
     }
     verif(mots);
-    var prop = prompt("Devine le mot mystère avec ceux-ci :" + mots);
+    var prop = prompt("Devine le mot mystère avec ceux-ci :" + mots + "Ou passe ton tour en écrivant : passe");
     if(prop.toLowerCase() == m_mys.toLowerCase()) {
         return([1,prop]);
     }
@@ -42,12 +42,3 @@ function verif(mots) {
     
     console.log("Mots restants : " + mots);
 }
-
-/*
-var j = prompt("Saisissez le nombre de joueurs")
-
-
-for(let i = 1;i<=nb_j;i++){
-    tour(j,i,"mot")
-}
-*/
