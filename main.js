@@ -428,9 +428,9 @@ while (i > 0){
         }
     }
     numbers=[];
-    j = 5; // nombre de joueur
+    j = 5; // nombre de mots
     while (j>0){
-        temp = Math.floor(Math.random()*400);
+        temp = Math.floor(Math.random()*len(listemots));
         if (!(temp in numbers)){
             numbers.push(listemots[temp]);
             listemots.pop(temp)
