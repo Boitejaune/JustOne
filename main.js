@@ -397,12 +397,12 @@ const listemots = ["Afrique",
     "Étoile",
     "Étude",
     "Oeil",
-    "Oeuf"]
-var i = 13 // Nombre de round
-var score = 0
-var ntour = 1
-var s_add = 0
-var m_d = ""
+    "Oeuf"];
+var i = 13; // Nombre de round
+var score = 0;
+var ntour = 1;
+var s_add = 0;
+var m_d = "";
 let historiqueContenu = "";
 
 function sauvegarderHistorique(historiqueContenu) {
@@ -426,29 +426,27 @@ while (i > 0){
         }else{
             window.confirm("nan vraiment un *nombre* entre 1 et 5");
         }
-    }
-    numbers=[];
+    };
+    mots=[];
     j = 5; // nombre de mots
     while (j>0){
-        temp = Math.floor(Math.random()*len(listemots));
-        if (!(temp in numbers)){
-            numbers.push(listemots[temp]);
+        temp = Math.floor(Math.random()*listemots.length);
+        if (!(temp in mots)){
+            mots.push(listemots[temp]);
             listemots.pop(temp)
         }
         j-=1;
-    }
-
-    
-    window.confirm("joueur actif (" + actif + "), cache toi les yeux, voiçi les mots qui étaient disponibles: ");
-    window.confirm(numbers);
-    window.confirm("le mot choisit est donc: " + numbers[result-1]);
-    [s_add, m_d] = tour(actif,5,numbers[result-1]);
+    };
+    window.confirm("joueur actif (" + actif + "), cache toi les yeux, voici les mots qui étaient disponibles: ");
+    window.confirm(mots);
+    window.confirm("le mot choisit est donc: " + mots[result-1]);
+    [s_add, m_d] = tour(actif,5,mots[result-1]);
     if (s_add == 1){
         score += s_add;
-    }
-    console.log(score)
+    };
+    console.log(score);
     window.confirm("votre score: " + score);
-    historiqueContenu += "Tour " + ntour +" : Mot à deviner : " + numbers[result-1] + "Mot donné : "+ m_d + "par joueur " + actif + "\n";
+    historiqueContenu += "Tour " + ntour +" : Mot à deviner : " + mots[result-1] + "Mot donné : "+ m_d + "par joueur " + actif + "\n";
     i -= 1;
     ntour += 1;
 }
