@@ -2,10 +2,10 @@
     "name": "justone",
     "version": "1.0.0",
     "scripts": {
-      "start": "index.html"
+        "start": "node main.js"
     },
     "dependencies": {
-      "express": "^4.18.2"
+        "express": "^4.18.2",
+        "prompt-sync": "^4.2.0"
     }
-  }
-  
+}

@@ -1,7 +1,7 @@
 var i = 13; // Nombre de round
 const fs = require('fs');
 const prompt = require('prompt-sync')();
-const tour = require('./tours.js');
+const tour = require('./tour.js');
 var score = 0;
 var ntour = 1;
 var s_add = 0;
@@ -55,7 +55,7 @@ while (i > 0){
     sleep(2000);
     console.log(mots)
     console.log("le mot choisit est donc: " + mots[result-1]);
-    [s_add, m_d] = tour.foo(actif,5,mots[result-1]);
+    [s_add, m_d] = tour.tour(actif,5,mots[result-1]);
     if (s_add == 1){
         score += s_add;
     };
