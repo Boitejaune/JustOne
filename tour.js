@@ -11,8 +11,8 @@ module.exports = {
                 continue;
             }
             else{
-                mots = prompt("Choisissez un mot joueur" + i);
-                l_mots.push(mots);
+                mot = prompt("Choisissez un mot joueur" + i);
+                l_mots.push(mot);
             }
         console.log(l_mots);
         }
@@ -29,20 +29,20 @@ module.exports = {
         }
     }
 }
-function verif(mots) {
-    console.log("Voici les mots que vous avez choisis : " + mots);
+function verif(mot) {
+    console.log("Voici les mots que vous avez choisis : " + mot);
     
-    while (mots.length > 0) {
+    while (mot.length > 0) {
         var confirm = prompt("Voulez-vous supprimez un mot ? (Si oui : true, sinon : false) ")
         if (confirm == "false") {
             break;
         }
         else{
-            suppr = prompt("Choisissez le mot à supprimer (0 à " + (mots.length - 1) + ") : " + mots);
+            suppr = prompt("Choisissez le mot à supprimer (0 à " + (mot.length - 1) + ") : " + mot);
             suppr = parseInt(suppr);
             
-            if (suppr >= 0 && suppr < mots.length) {
-                mots.splice(suppr, 1);
+            if (suppr >= 0 && suppr < mot.length) {
+                mot.splice(suppr, 1);
             } else {
                 console.log("Numéro invalide");
             }
@@ -50,5 +50,5 @@ function verif(mots) {
         }
     }
     
-    console.log("Mots restants : " + mots);
+    console.log("Mots restants : " + mot);
 }

@@ -1,4 +1,4 @@
-var i = 13; // Nombre de round
+var i = 1; // Nombre de round
 const fs = require('fs');
 const prompt = require('prompt-sync')();
 const tour = require('./tour.js');
@@ -10,14 +10,9 @@ let historiqueContenu = "";
 var stringmots = fs.readFileSync('data.txt', 'utf8');
 var listemots = stringmots.split(',\r\n')
 
-function sauvegarderHistorique(historiqueContenu) {
-    const blob = new Blob([historiqueContenu], { type: 'text/plain' });
-    const lien = document.createElement('a');
-    lien.href = URL.createObjectURL(blob);
-    lien.download = 'Historique.txt';
-    document.body.appendChild(lien);
-    lien.click();
-    document.body.removeChild(lien);
+function sauvegarderHistorique(contenu) {
+    fs.writeFileSync('Historique.txt', contenu, 'utf8');
+    console.log("Historique sauvegardé dans Historique.txt");
 }
 
 function sleep(milliseconds) {
@@ -60,10 +55,9 @@ while (i > 0){
         score += s_add;
     };
     console.log("votre score: " + score);
-    historiqueContenu += "Tour " + ntour +" : Mot à deviner : " + mots[result-1] + "Mot donné : "+ m_d + "par joueur " + actif + "\n";
+    historiqueContenu += "Tour " + ntour +" : Mot à deviner : " + mots[result-1] + ", Mot donné : "+ m_d + ", par joueur " + actif + "\n";
     i -= 1;
     ntour += 1;
 }
-window.addEventListener('load', function() {
+
     sauvegarderHistorique(historiqueContenu);
-});
