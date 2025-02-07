@@ -1,0 +1,11 @@
+{
+    "name": "justone",
+    "version": "1.0.0",
+    "scripts": {
+      "start": "index.html"
+    },
+    "dependencies": {
+      "express": "^4.18.2"
+    }
+  }
+  
